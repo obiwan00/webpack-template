@@ -1,0 +1,17 @@
+@mixin font-size($deskSize, $mobSize) {
+    $addSize: $deskSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    @media (min-width: #{$container + px}) {
+        font-size: #{$deskSize + px};
+    }
+    @media (min-width: 767px) and (max-width: #{$container + px}) {
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$container}));
+    }
+    @media (max-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$container}));
+    }
+    @media (max-width: 370px) {
+        font-size: #{$mobSize + px};
+    }
+}

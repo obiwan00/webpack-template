@@ -1,0 +1,22 @@
+// sizing
+$container: 1250; // container width
+$tablet: 1024px; // @media screen and (max-width: $tablet) --> 1024px and smaller
+$tabletP1: $tablet / 1px + 1px; // @media screen and (min-width: $tabletP1) --> 1025px and bigger
+$tabletSmall: 767px;
+$tabletSmallP1: $tabletSmall / 1px + 1px;
+$mobile: 575px;
+$mobileP1: $mobile / 1px + 1px;
+$mobileSmall: 370px;
+
+// font sizing
+$base-size: 18px;
+$mobile-base-size: 14px;
+$tablet-base-size: 16px;
+$max-heading: 6;
+
+// font family
+$body-font: "Roboto", Arial;
+
+//colors
+$white: #fff;
+$black: #000;

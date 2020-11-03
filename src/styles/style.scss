@@ -1,0 +1,14 @@
+@import '~normalize.css';
+@import '_reset';
+@import '_variables';
+@import '_functions';
+@import '_typography';
+
+
+@import 'components/container';
+@import 'components/btn';
+@import 'components/input';
+
+h1{
+    color: blue;
+}

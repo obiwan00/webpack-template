@@ -1,0 +1,26 @@
+.btn{
+    // font-family: 'Open Sans', sans-serif;
+
+    height: 50px;
+    width: auto;
+
+    cursor: pointer;
+    outline: none;
+
+    padding: 0 30px;
+    border-radius: 25px;
+    // border: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // color: $white;
+    // background-color: $primary-color;
+
+    // @include font-size(16,14);
+    // font-weight: 600;
+
+    text-transform: uppercase;
+}
