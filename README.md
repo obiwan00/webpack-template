@@ -6,7 +6,7 @@ Webpack is a module bundler. Its main purpose is to bundle JavaScript files for 
 
 ``` bash
 # Download repository:
-git clone https://obiwwan@bitbucket.org/obiwwan/webpacktemplate.git webpack-template
+git clone https://github.com/obiwan00/webpack-template.git webpack-template
 
 # Go to the app:
 cd webpack-template
