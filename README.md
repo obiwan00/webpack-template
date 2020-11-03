@@ -31,6 +31,7 @@ npm run build
 * `src/js/index.js` - main app file where you include/import all required libs and init app
 
 # ⚙️ Settings ⚙️
+
 ## Import Another libs:
 1. Install libs
 2. Import libs in `./index.js`
@@ -66,7 +67,13 @@ Automatic creation any html pages:
 
 
 ## Add Fonts:
-Add file with fonts in `/src/styles/fonts/`
+
+Сhoose one of the ways:
+1. Handle menthod,
+2. Use @import;
+
+### Handle:
+Add file with fonts in `./src/styles/fonts/`
 ```
 .
 ├── AileronTTF
@@ -74,7 +81,7 @@ Add file with fonts in `/src/styles/fonts/`
 │   └── Aileron-Regular.ttf
 └── fonts.scss
 ```
-Add @font-face in `/src/styles/fonts/fonts.scss`:
+Add `@font-face` in `./src/styles/fonts/fonts.scss`:
 
 ``` scss
 // Example with Aileron
@@ -91,11 +98,16 @@ Add @font-face in `/src/styles/fonts/fonts.scss`:
 ...
 ```
 
-Add vars for font in `/src/styles/_typography.scss`:
+Add vars for font in `./src/styles/_typography.scss`:
 
 ``` scss
-$myFont : 'Helvetica-Base', Arial, sans-serif;
+$myFont : 'Aileron', Arial, sans-serif;
 ```
+### @import:
+
+Add `@import` of font to the begining of `./src/styles/_typography.scss` file.
+
+Exemple: `@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');`
 
 ## License `null`
 
