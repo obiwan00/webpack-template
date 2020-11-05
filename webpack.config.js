@@ -176,7 +176,7 @@ module.exports = {
         use: cssLoaders({
           loader: 'sass-loader',
           options: {
-            sourceMap: isDev,
+            sourceMap: true,
           },
         }),
       },
