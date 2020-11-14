@@ -125,7 +125,7 @@ const plugins = () => {
         }
     ),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'style/[name].css',
     }),
     new ImageminPlugin({
       disable: isDev,
@@ -150,7 +150,7 @@ module.exports = {
     main: ['@babel/polyfill', './js/index.js'],
   },
   output: {
-    filename: '[name].js',
+    filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
@@ -190,8 +190,12 @@ module.exports = {
         use: jsLoaders(),
       },
       {
-        test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
-        loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+        test: /\.(eot|woff|woff2|ttf)$/,
+        loader: 'url-loader?limit=30000&name=fonts/[name]-[hash].[ext]'
+      },
+      {
+        test: /\.(svg|png|jpg)$/,
+        loader: 'url-loader?limit=30000&name=images/[name]-[hash].[ext]'
       }
     ]
   }
