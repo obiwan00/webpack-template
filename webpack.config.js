@@ -191,7 +191,7 @@ module.exports = {
       },
       {
         test: /\.(eot|woff|woff2|ttf)$/,
-        loader: 'url-loader?limit=30000&name=fonts/[name]-[hash].[ext]'
+        loader: 'url-loader?limit=30000&name=style/fonts/[name]-[hash].[ext]'
       },
       {
         test: /\.(svg|png|jpg)$/,
