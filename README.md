@@ -91,10 +91,10 @@ Add `@font-face` in `./src/styles/_fonts.scss`:
 }
 ```
 
-Add vars for font in `./src/styles/_typography.scss`:
+Add vars for font in `./src/styles/_variables.scss`:
 
 ``` scss
-$myFont : 'Aileron', Arial, sans-serif;
+$myFont : 'CustomFont', Arial, sans-serif;
 ```
 ### @import:
 
