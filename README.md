@@ -26,6 +26,7 @@ npm run build
 * `src/index.html` - main app HTML
 * `src/styles` - put custom app SCSS styles here. Don't forget to import them in `index.js`
 * `src/styles/components` - folder with custom `.scss` components
+* `src/fonts` - put your fonts here. Don't forget to plugin them in `srs/style/_fonts.scss`
 * `src/img` - put images here.
 * `src/js` - put custom app scripts here
 * `src/js/index.js` - main app file where you include/import all required libs and init app
@@ -73,29 +74,21 @@ Automatic creation any html pages:
 2. Use @import;
 
 ### Handle:
-Add file with fonts in `./src/styles/fonts/`
+Add files with fonts in `./src/fonts/`
 ```
 .
-├── AileronTTF
-│   ├── Aileron-Bold.ttf
-│   └── Aileron-Regular.ttf
-└── fonts.scss
+└── CustomFont
+    └── CustomFont.woff2
 ```
-Add `@font-face` in `./src/styles/fonts/fonts.scss`:
+Add `@font-face` in `./src/styles/_fonts.scss`:
 
 ``` scss
-// Example with Aileron
+// Example with CustomFont
 @font-face {
-    font-family: 'Aileron';
-    font-weight: 400;
-    src: url('./AileronTTF/Aileron.ttf');
-}
-@font-face {
-    font-family: 'Aileron';
+    font-family: 'CustomFont';
     font-weight: 700;
-    src: url('./AileronTTF/Aileron-Bold.ttf');
+    src: url('../fonts/CustomFont/CustomFont.woff2');
 }
-...
 ```
 
 Add vars for font in `./src/styles/_typography.scss`:
@@ -105,10 +98,15 @@ $myFont : 'Aileron', Arial, sans-serif;
 ```
 ### @import:
 
-Add `@import` of font to the begining of `./src/styles/_typography.scss` file.
-
-Exemple: `@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');`
-
+Add `@import` before import of `_typography.scss` file.
+``` scss
+// ./srs/styles/style.scss
+...
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,300;1,400;1,900&display=swap");
+@import '_fonts';
+@import '_typography';
+...
+```
 ## License `null`
 
 Copyright (c) 2020-present, [Ivan Maidaniuk](https://github.com/obiwan00) - [Contact](https://t.me/ivan_maidaniuk)

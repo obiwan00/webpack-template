@@ -1,5 +1,7 @@
-// sizing
-$container: 1250; // container width
+// SIZING
+$container: 1830; // container width
+$tabletLarge: 1280px;
+$tabletLargeP1: $tabletLarge / 1px + 1px;
 $tablet: 1024px; // @media screen and (max-width: $tablet) --> 1024px and smaller
 $tabletP1: $tablet / 1px + 1px; // @media screen and (min-width: $tabletP1) --> 1025px and bigger
 $tabletSmall: 767px;
@@ -16,6 +18,7 @@ $max-heading: 6;
 
 // font family
 $body-font: "Roboto", Arial;
+$secondary-font: "HanmadeRegular", Arial;
 
 //colors
 $white: #fff;

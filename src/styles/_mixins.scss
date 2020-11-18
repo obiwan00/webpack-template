@@ -2,16 +2,52 @@
     $addSize: $deskSize - $mobSize;
     $addMobSize: $addSize + $addSize * 0.7;
 
-    @media (min-width: #{$container + px}) {
-        font-size: #{$deskSize + px};
-    }
-    @media (min-width: 767px) and (max-width: #{$container + px}) {
-        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$container}));
-    }
-    @media (max-width: 767px) {
+    font-size: #{$mobSize + px};
+
+    @media (min-width: 380px) and (max-width: $tabletSmall) {
         font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$container}));
     }
-    @media (max-width: 370px) {
-        font-size: #{$mobSize + px};
+    @media (min-width: $tabletSmallP1) and (max-width: #{$container + px}) {
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$container}));
+    }
+    @media (min-width: #{$container + 1 + px}) {
+        font-size: #{$deskSize + px};
+    }
+}
+
+@mixin line-height($deskSize, $mobSize) {
+    $addSize: $deskSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    line-height: #{$mobSize + px};
+
+    @media (min-width: 380px) and (max-width: $tabletSmall) {
+        line-height: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$container}));
+    }
+    @media (min-width: $tabletSmallP1) and (max-width: #{$container + px}) {
+        line-height: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$container}));
+    }
+    @media (min-width: #{$container + 1 + px}) {
+        line-height: #{$deskSize + px};
+    }
+}
+
+@mixin abs-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@mixin fullWidthBeforeTablet {
+    @media (max-width: $tabletLargeP1) {
+        position: relative;
+        left: -20px;
+        width: 100vw;
     }
 }
