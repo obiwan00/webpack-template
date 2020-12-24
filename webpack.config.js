@@ -17,6 +17,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const isDev = process.env.NODE_ENV === 'development'
 const isAnalyzing = process.env.IS_ANALYZING === true
 const isProd = !isDev
+const minImage = process.env.MIN_IMG
 
 const optimization = () => {
   const config = {
@@ -133,7 +134,7 @@ const plugins = () => {
       filename: 'style/[name].css',
     }),
     new ImageminPlugin({
-      disable: isDev,
+      disable: !minImage,
       test: /\.(jpe?g|png|gif)$/i,
       pngquant: {
         quality: '85'

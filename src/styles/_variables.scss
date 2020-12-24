@@ -1,5 +1,9 @@
-// SIZING
-$container: 1830; // container width
+// Sizing
+$container: 1906; // container width
+$deskLarge: 1599px;
+$deskLargeP1: $deskLarge / 1px + 1px;
+$desktop: 1439px;
+$desktopP1: $desktop / 1px + 1px;
 $tabletLarge: 1280px;
 $tabletLargeP1: $tabletLarge / 1px + 1px;
 $tablet: 1024px; // @media screen and (max-width: $tablet) --> 1024px and smaller
@@ -9,17 +13,13 @@ $tabletSmallP1: $tabletSmall / 1px + 1px;
 $mobile: 575px;
 $mobileP1: $mobile / 1px + 1px;
 $mobileSmall: 370px;
+$mobileSmallP1: $mobileSmall / 1px + 1px;
 
-// font sizing
-$base-size: 18px;
-$mobile-base-size: 14px;
-$tablet-base-size: 16px;
-$max-heading: 6;
+// Fonts
+$primary-font: 'Roboto', Arial;
+$secondary-font: 'Expletus Sans', Arial;
 
-// font family
-$body-font: "Roboto", Arial;
-$secondary-font: "HanmadeRegular", Arial;
-
-//colors
-$white: #fff;
-$black: #000;
+// Colors
+$white: #ffffff;
+$black: #000000;
+$transparent: rgba(0, 0, 0, .0);

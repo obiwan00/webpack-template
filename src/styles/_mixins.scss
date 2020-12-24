@@ -1,34 +1,31 @@
-@mixin font-size($deskSize, $mobSize) {
+@mixin adaptiveProperty($propertyName, $deskSize, $mobSize, $important: false) {
     $addSize: $deskSize - $mobSize;
     $addMobSize: $addSize + $addSize * 0.7;
-
-    font-size: #{$mobSize + px};
-
+    @if ($important) {
+        #{$propertyName}: pxToRem($mobSize) !important;
+    } @else {
+        #{$propertyName}: pxToRem($mobSize);
+    }
     @media (min-width: 380px) and (max-width: $tabletSmall) {
-        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$container}));
+        @if ($important) {
+            #{$propertyName}: calc(#{pxToRem($mobSize)} + #{$addMobSize} * ((100vw - 320px) / #{$container})) !important;
+        } @else {
+            #{$propertyName}: calc(#{pxToRem($mobSize)} + #{$addMobSize} * ((100vw - 320px) / #{$container}));
+        }
     }
     @media (min-width: $tabletSmallP1) and (max-width: #{$container + px}) {
-        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$container}));
+        @if ($important) {
+            #{$propertyName}: calc(#{pxToRem($mobSize)} + #{$addSize} * (100vw / #{$container})) !important;
+        } @else {
+            #{$propertyName}: calc(#{pxToRem($mobSize)} + #{$addSize} * (100vw / #{$container}));
+        }
     }
     @media (min-width: #{$container + 1 + px}) {
-        font-size: #{$deskSize + px};
-    }
-}
-
-@mixin line-height($deskSize, $mobSize) {
-    $addSize: $deskSize - $mobSize;
-    $addMobSize: $addSize + $addSize * 0.7;
-
-    line-height: #{$mobSize + px};
-
-    @media (min-width: 380px) and (max-width: $tabletSmall) {
-        line-height: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$container}));
-    }
-    @media (min-width: $tabletSmallP1) and (max-width: #{$container + px}) {
-        line-height: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$container}));
-    }
-    @media (min-width: #{$container + 1 + px}) {
-        line-height: #{$deskSize + px};
+        @if ($important) {
+            #{$propertyName}: pxToRem($deskSize) !important;
+        } @else {
+            #{$propertyName}: pxToRem($deskSize);
+        }
     }
 }
 
@@ -41,13 +38,38 @@
     img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
 }
 
 @mixin fullWidthBeforeTablet {
     @media (max-width: $tabletLargeP1) {
         position: relative;
-        left: -20px;
+        left: -$containerPaddingS;
         width: 100vw;
     }
+    @media (min-width: $mobileP1) and (max-width: $tabletLarge) {
+        left: -$containerPaddingM;
+    }
 }
+
+@mixin marginTop($desktopValue, $mobileValue) {
+    margin-top: pxToRem($mobileValue);
+    @media (min-width: $tabletSmallP1) {
+        margin-top: pxToRem($desktopValue)
+    }
+}
+
+@mixin marginBottom($desktopValue, $mobileValue, $hideLastMargin: false) {
+    margin-bottom: pxToRem($mobileValue);
+    @media (min-width: $tabletSmallP1) {
+        margin-bottom: pxToRem($desktopValue)
+    }
+    @if ($hideLastMargin) {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+

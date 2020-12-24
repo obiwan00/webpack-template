@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build:min": "cross-env MIN_IMG=true NODE_ENV=production webpack --mode production",
     "watch": "cross-env NODE_ENV=development webpack --mode development  --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "stats": "cross-env IS_ANALYZING=true  webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
@@ -58,7 +59,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
-  }
+  "dependencies": {}
 }

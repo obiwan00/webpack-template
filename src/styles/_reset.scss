@@ -66,4 +66,13 @@ img {
   display: block;
   height: auto;
 }
-
+button{
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: $transparent;
+  &:focus {
+    outline: none;
+  }
+}

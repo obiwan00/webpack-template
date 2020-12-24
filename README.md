@@ -45,11 +45,20 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 ```
 
 ## Import js files:
-1. Create another js module in `./js/` folder
+1. Create another js module in `./js/components` folder
 2. Import modules in `./js/index.js` file
+
+Example:
 ``` js
-// another js file for example
-import './common.js'
+// ./js/index.js
+
+import initMenu from './components/menu';
+
+function runAfterDomLoad() {
+...
+ initMenu()
+...
+}
 ```
 
 ## HTML Directory: `./src`
