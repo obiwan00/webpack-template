@@ -4,4 +4,10 @@
     padding: 0 15px;
     margin: 0 auto;
     box-sizing: border-box;
+    @media (min-width: $mobileP1) {
+        padding: 0 $containerPaddingM;
+    }
+    @media (min-width: $tabletLargeP1) {
+        padding: 0 $containerPadding;
+    }
 }
